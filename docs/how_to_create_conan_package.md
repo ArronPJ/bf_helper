@@ -6,8 +6,15 @@
 
 #### Example1:
 
+- create source code and test pacakge
+
 ```
 conan new bf_helper/1.0 -t -s
+```
+
+- build and run for test.
+
+```
 conan create . user/testing
 ```
 
