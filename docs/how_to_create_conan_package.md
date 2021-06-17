@@ -4,7 +4,7 @@
 
 - we need to use template
 
-#### Example1:
+### Example1:
 
 - create source code and test pacakge
 
@@ -17,6 +17,20 @@ conan new bf_helper/1.0 -t -s
 ```
 conan create . user/testing
 conan create . user/testing -s build_type=Debug
+conan create . user/testing -s build_type=Release
+```
+
+#### iOS
+
+```
+conan create . user/testing -s build_type=Debug --profile ios
+```
+
+#### Android Build 之前，要安裝 NDK
+
+```
+conan create . user/testing -s build_type=Debug --profile android-armv7
+conan create . user/testing -s build_type=Debug --profile android-armv8
 ```
 
 ### Issues:
