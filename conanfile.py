@@ -9,6 +9,7 @@ class BfHelperConan(ConanFile):
     url = "https://github.com/ArronPJ/bf_helper"
     description = "Library package by Conan"
     topics = ("helper utility", "crossplatform")
+    #requires = "boost/1.71.0" # comma-separated list of requirements
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
