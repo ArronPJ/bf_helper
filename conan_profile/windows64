@@ -1,0 +1,16 @@
+include(default)
+
+[settings]
+compiler=Visual Studio
+compiler.version=15
+arch=x86_64
+arch_build=x86_64
+
+[options]
+libcurl:with_openssl=False
+libcurl:with_winssl=True
+
+[build_requires]
+zlib/1.2.11@conan/stable
+msys2_installer/latest@bincrafters/stable
+cygwin_installer/2.9.0@bincrafters/stable
