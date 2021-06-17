@@ -16,6 +16,7 @@ conan new bf_helper/1.0 -t -s
 
 ```
 conan create . user/testing
+conan create . user/testing -s build_type=Debug
 ```
 
 ### Issues:
