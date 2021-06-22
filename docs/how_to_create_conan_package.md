@@ -20,10 +20,20 @@ conan create . user/testing -s build_type=Debug
 conan create . user/testing -s build_type=Release
 ```
 
-#### iOS
+#### Multiple Platform Build Target:
+
+- iOS
 
 ```
 conan create . user/testing -s build_type=Debug --profile ios
+conan create . user/testing -s build_type=Debug --profile ios_sim
+```
+
+- macOS
+- MARK this if needed "compiler.libcxx=libstdc++"
+
+```
+CC=clang CXX=clang++ conan create . user/testing -s build_type=Debug --profile macOS --build=missing
 ```
 
 #### Android Build 之前，要安裝 NDK

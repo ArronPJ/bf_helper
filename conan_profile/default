@@ -1,12 +1,12 @@
-include(default)
-
 [settings]
-os=Macos
-os_build=Macos
 arch=x86_64
 arch_build=x86_64
+build_type=Release
 compiler=apple-clang
 compiler.version=11.0
-## compiler.libcxx=libstdc++
 compiler.libcxx=libc++
-build_type=Debug
+os=Macos
+os_build=Macos
+[options]
+[build_requires]
+[env]

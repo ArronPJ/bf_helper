@@ -2,8 +2,19 @@
 #include "bf_helper.h"
 
 static const int32_t k_bf_helper_version_major = 1;
-static const int32_t k_bf_helper_version_minor = 1;
+static const int32_t k_bf_helper_version_minor = 2;
 static const int32_t k_bf_helper_version_patch = 0;
+// V1.0.0 : create this library
+// V1.1.0 : provide version function
+// V1.2.0 : add decoder init and shutdown into single source code.
+
+//Gloabal flag
+
+/// PART "bf_decoder"
+
+static bool g_avcodec_registed = false;
+
+/// PART "bf_decoder" END
 
 void bf_helper_version()
 {
@@ -23,3 +34,19 @@ void bf_helper_version()
 
 //void bf_helper_init(){}
 //void bf_helper_shutdown(){}
+
+/// ============= "bf_decoder" START ===========
+bool bf_decoder_init()
+{
+    if (!g_avcodec_registed)
+    {
+        //FFMPEG Register_all
+        g_avcodec_registed = true;
+    }
+    //get version from ffmpeg
+    return true;
+}
+void bf_decoder_shutdown()
+{
+}
+/// ============= "bf_decoder" END =============
