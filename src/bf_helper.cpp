@@ -3,7 +3,7 @@
 
 static const int32_t k_bf_helper_version_major = 1;
 static const int32_t k_bf_helper_version_minor = 2;
-static const int32_t k_bf_helper_version_patch = 0;
+static const int32_t k_bf_helper_version_patch = 1;
 // V1.0.0 : create this library
 // V1.1.0 : provide version function
 // V1.2.0 : add decoder init and shutdown into single source code.
@@ -25,10 +25,10 @@ void bf_helper_version()
             k_bf_helper_version_patch);
 #ifdef NDEBUG
     std::cout
-        << "bf_helper/1.0: " << version << " Release!" << std::endl;
+        << "bf_helper: " << version << " Release!" << std::endl;
 #else
     std::cout
-        << "bf_helper/1.0: " << version << " Debug!" << std::endl;
+        << "bf_helper: " << version << " Debug!" << std::endl;
 #endif
 }
 

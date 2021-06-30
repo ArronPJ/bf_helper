@@ -3,7 +3,7 @@ from conans import ConanFile, CMake
 
 class BfHelperConan(ConanFile):
     name = "bf_helper"
-    version = "1.2"
+    version = "1.2.1"
     license = "MIT"
     author = "ArronPJ <princejar@gmail.com>"
     url = "https://github.com/ArronPJ/bf_helper"
@@ -22,6 +22,7 @@ class BfHelperConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
+        cmake.verbose = True
         cmake.configure(source_folder="src")
         cmake.build()
 

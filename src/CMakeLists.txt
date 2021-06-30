@@ -7,7 +7,7 @@ conan_basic_setup(TARGETS)
 set(CMAKE_C_COMPILER /usr/bin/clang)
 set(CMAKE_CXX_COMPILER /usr/bin/clang++)
 
-add_library(bf_helper bf_helper.cpp)
+add_library(bf_helper bf_helper.cpp bf_object.cpp)
 
 #[[Need to add this for boost?
 target_link_libraries(${PROJECT_NAME} CONAN_PKG::boost)
