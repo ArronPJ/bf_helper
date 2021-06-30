@@ -12,9 +12,16 @@ class BfHelperConan(ConanFile):
     #requires = "boost/1.71.0" # comma-separated list of requirements
     requires = "jansson/2.13.1"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
-    generators = "cmake"
+    options = {
+        "shared": [True, False], 
+        "fPIC": [True, False]
+    }
+    default_options = {
+        "shared": False, 
+        "fPIC": True
+    }
+    # add "conanbuildinfo.json", 
+    generators = "cmake", "json"
     exports_sources = "src/*"
 
     def config_options(self):
