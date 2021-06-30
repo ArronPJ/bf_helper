@@ -10,6 +10,13 @@ void check_library_version()
     printf("check version, %s\n", ov);
 }
 
+void check_object_usage()
+{
+    bf_object *o1 = bf_object_create();
+    bf_object_release(&o1);
+    printf("check pointer = %d\n", o1);
+}
+
 void run_decoder_process()
 {
     bf_decoder_init();
@@ -19,5 +26,6 @@ void run_decoder_process()
 int main()
 {
     check_library_version();
+    check_object_usage();
     run_decoder_process();
 }

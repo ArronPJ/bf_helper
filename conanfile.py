@@ -3,13 +3,14 @@ from conans import ConanFile, CMake
 
 class BfHelperConan(ConanFile):
     name = "bf_helper"
-    version = "1.2.1"
+    version = "1.2.2"
     license = "MIT"
     author = "ArronPJ <princejar@gmail.com>"
     url = "https://github.com/ArronPJ/bf_helper"
     description = "Library package by Conan"
     topics = ("helper utility", "crossplatform")
     #requires = "boost/1.71.0" # comma-separated list of requirements
+    requires = "jansson/2.13.1"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
