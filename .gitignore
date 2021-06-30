@@ -1,2 +1,9 @@
 bin/
 build/
+
+build*
+.idea/
+.DS_Store
+
+.venv/
+.vscode/
