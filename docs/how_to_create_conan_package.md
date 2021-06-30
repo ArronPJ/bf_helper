@@ -3,7 +3,10 @@
 ## Into:
 
 - we need to use template
-- [PossibleReferenceProject:SDK](https://github.com/TankerHQ/sdk-native)
+
+### More information:
+
+- [learn from sdk](./learn_from_sdk.md)
 
 ### Example1:
 
