@@ -5,14 +5,27 @@ from conans import ConanFile, CMake, tools
 
 class BfHelperTestConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
+    #org
     generators = "cmake"
+    #generators = "xcode"
+
+    def configure_cmake(self):
+        cmake = CMake(self)
+        # Options
+        cmake.definitions["SOME_DEFINITION_NAME"] = "On"
+        cmake.configure()
+        return cmake
 
     def build(self):
-        cmake = CMake(self)
+        #org
+        #cmake = CMake(self)
+        #new
+        cmake = self.configure_cmake()
         # Current dir is "test_package/build/<build_id>" and CMakeLists.txt is
         # in "test_package"
         cmake.configure()
         cmake.build()
+        
 
     def imports(self):
         self.copy("*.dll", dst="bin", src="bin")
