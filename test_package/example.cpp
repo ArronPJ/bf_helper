@@ -14,7 +14,7 @@ void check_object_usage()
 {
     bf_object *o1 = bf_object_create();
     bf_object_release(&o1);
-    printf("check pointer = %d\n", o1);
+    printf("check pointer = %x\n", o1);
 }
 
 void run_decoder_process()
