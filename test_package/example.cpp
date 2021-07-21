@@ -51,8 +51,13 @@ void run_decoder_process()
 
 int main()
 {
+    //01
     check_library_version();
+    //02
     check_object_usage();
+    //03
+    check_function_target_creation();
+    //04
     run_decoder_process();
 }
 

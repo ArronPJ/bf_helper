@@ -29,9 +29,19 @@ public:
     bf_target_object() : target_index(0) /*, bf_target_object(nullptr)*/ {}
 
 } bf_target_object;
-
+void get_boost_version()
+{
+    char b_version[64];
+    sprintf(b_version, "%d.%d.%d",
+            (BOOST_VERSION / 100000),
+            (BOOST_VERSION / 100 % 1000),
+            (BOOST_VERSION % 100));
+    std::cout
+        << "boost_version: " << b_version << std::endl;
+}
 bool bf_functions_init()
 {
+
     return false;
 }
 
@@ -41,6 +51,7 @@ void bf_functions_shutdown()
 //
 bool bf_create_object(const bf_create_object_config_params *params, bf_target_object **target_object)
 {
+    get_boost_version();
     if (!params)
     {
         return false;
