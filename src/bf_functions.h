@@ -27,7 +27,6 @@ extern "C"
 #include <inttypes.h>
 #endif
     //////////////////////////////////////////
-
     struct bf_target_object; //target object
 
     typedef struct bf_object_config_packet
