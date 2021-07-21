@@ -3,14 +3,14 @@ from conans import ConanFile, CMake
 
 class BfHelperConan(ConanFile):
     name = "bf_helper"
-    version = "1.2.2"
+    version = "1.2.3"
     license = "MIT"
     author = "ArronPJ <princejar@gmail.com>"
     url = "https://github.com/ArronPJ/bf_helper"
     description = "Library package by Conan"
     topics = ("helper utility", "crossplatform")
     #requires = "boost/1.71.0" # comma-separated list of requirements
-    requires = "jansson/2.13.1"
+    #requires = "jansson/2.13.1"
     settings = "os", "compiler", "build_type", "arch"
     options = {
         "shared": [True, False], 
@@ -27,6 +27,11 @@ class BfHelperConan(ConanFile):
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
+    def requirements(self):
+        # If we need to dynamic require according to OS?
+        self.requires("jansson/2.12")
+        self.requires("boost/1.69.0")
+
 
     def build(self):
         cmake = CMake(self)

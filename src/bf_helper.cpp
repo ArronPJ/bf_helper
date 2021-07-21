@@ -3,10 +3,12 @@
 
 static const int32_t k_bf_helper_version_major = 1;
 static const int32_t k_bf_helper_version_minor = 2;
-static const int32_t k_bf_helper_version_patch = 1;
+static const int32_t k_bf_helper_version_patch = 3;
+
 // V1.0.0 : create this library
 // V1.1.0 : provide version function
 // V1.2.0 : add decoder init and shutdown into single source code.
+// V1.2.3 : add bf_function for boost operation container.
 
 //Gloabal flag
 

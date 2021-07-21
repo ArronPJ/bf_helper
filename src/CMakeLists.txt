@@ -8,9 +8,15 @@ set(CMAKE_C_COMPILER /usr/bin/clang)
 set(CMAKE_CXX_COMPILER /usr/bin/clang++)
 
 
-add_library(bf_helper bf_helper.cpp bf_object.cpp)
+add_library(bf_helper bf_helper.cpp bf_object.cpp bf_functions.cpp)
 
-target_link_libraries(${PROJECT_NAME} CONAN_PKG::jansson)
+target_link_libraries(${PROJECT_NAME} PRIVATE CONAN_PKG::jansson CONAN_PKG::boost)
+#org
+#target_link_libraries(${PROJECT_NAME} CONAN_PKG::jansson)
+#op1-fail
+#target_link_libraries(${PROJECT_NAME} CONAN_PKG::jansson CONAN_PKG::boost::system)
+#op2-ok
+#target_link_libraries(${PROJECT_NAME} CONAN_PKG::jansson CONAN_PKG::boost)
 
 #[[Need to add this for boost?
 target_link_libraries(${PROJECT_NAME} CONAN_PKG::boost)

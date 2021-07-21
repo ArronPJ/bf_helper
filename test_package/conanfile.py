@@ -8,13 +8,19 @@ class BfHelperTestConan(ConanFile):
     #org
     generators = "cmake"
     #generators = "xcode"
-
+    # fail to add catch2
+    #build_requires = "catch2/2.13.6"
+    #exports_sources = "CMakeLists.txt", "include*", "src*", "test/src*", "test/resources*"
+    
     def configure_cmake(self):
         cmake = CMake(self)
         # Options
         cmake.definitions["SOME_DEFINITION_NAME"] = "On"
         cmake.configure()
         return cmake
+    
+    #def requirements(self):
+    #    self.requires("catch2/2.13.6")
 
     def build(self):
         #org
@@ -25,7 +31,6 @@ class BfHelperTestConan(ConanFile):
         # in "test_package"
         cmake.configure()
         cmake.build()
-        
 
     def imports(self):
         self.copy("*.dll", dst="bin", src="bin")
