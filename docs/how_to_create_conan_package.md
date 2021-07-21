@@ -24,6 +24,21 @@ conan create . user/testing -s build_type=Debug
 conan create . user/testing -s build_type=Release
 ```
 
+#### Install (在 conan 目錄中)
+
+- 結果相關資料會在 conan 目錄中，方便清除
+
+```
+conan install .. user/testing -s build_type=Debug
+```
+
+- for cmake_multi
+
+```
+conan install .. user/testing -g cmake_multi -s build_type=Debug
+
+```
+
 #### Multiple Platform Build Target:
 
 - iOS
