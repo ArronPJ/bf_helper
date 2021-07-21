@@ -1,5 +1,6 @@
 bin/
 build/
+conan/
 
 build*
 .idea/
