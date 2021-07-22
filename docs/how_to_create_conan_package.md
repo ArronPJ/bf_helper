@@ -55,6 +55,15 @@ conan create . user/testing -s build_type=Debug --profile ios_sim
 CC=clang CXX=clang++ conan create . user/testing -s build_type=Debug --profile macOS --build=missing
 ```
 
+#### Multiple Platform Build Target (in conan Folder)
+
+```
+conan create .. user/testing -s build_type=Debug --profile macOS --build=missing
+conan create .. user/testing -s build_type=Debug --profile ios --build=missing
+conan create .. user/testing -s build_type=Debug --profile ios_sim --build=missing
+conan create .. user/testing -s build_type=Debug --profile mac_catalyst --build=missing
+```
+
 #### Android Build 之前，要安裝 NDK
 
 ```
